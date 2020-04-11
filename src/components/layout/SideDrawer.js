@@ -1,9 +1,15 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-function SideDrawer({ open, onClose }) {
+type Props = {
+  open: boolean,
+  onClose: () => void
+}
+
+function SideDrawer({ open, onClose }: Props) {
   return (
     <Drawer anchor="right" open={open} onClose={onClose}>
       <List component="nav">
