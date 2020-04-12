@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -7,10 +7,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SideDrawer from './SideDrawer';
 
 function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [isTransparent, setIsTransparent] = React.useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setIsTransparent(false);
